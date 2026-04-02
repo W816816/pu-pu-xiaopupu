@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Stores user profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "phoneNumber": { "type": "string", "description": "User's phone number" },
+        "email": { "type": "string", "description": "User's email address" },
+        "displayName": { "type": "string", "description": "User's display name" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation time" }
+      },
+      "required": ["uid", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "users",
+      "description": "User profile documents"
+    }
+  }
+}
